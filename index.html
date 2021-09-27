@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Calendar</title>
+  </head>
+  <body>
+    <div class="calendar-container">
+      <div class="calendar">
+        <div class="month"></div>
+        <div class="weekend"></div>
+        <div class="date"></div>
+        <div class="year"></div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const month = document.querySelector(".month");
+    const weekend = document.querySelector(".weekend");
+    const date = document.querySelector(".date");
+    const year = document.querySelector(".year");
+
+    month.innerText = new Date().toLocaleString("en", { month: "long" });
+    weekend.innerText = new Date().toLocaleString("en", {
+      weekday: "long",
+    });
+    date.innerText = new Date().toLocaleString("en", { day: "2-digit" });
+    year.innerText = new Date().getFullYear();
+  </script>
+</html>
